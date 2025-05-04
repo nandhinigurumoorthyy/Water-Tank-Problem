@@ -1,0 +1,278 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #D6D6D6;
+  margin-top: 20px;
+  padding-bottom: 20px;
+}
+
+.input, .fancy-button {
+  width: 100%; /* full width on mobile */
+  box-sizing: border-box; /* important for padding control */
+}
+
+.fancy-button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 12px 24px;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+  font-weight: 500;
+  background-color: #00afef;
+  /* indigo-500 */
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.corner {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background-color: #0076a2;
+  /* indigo-700 */
+  border-radius: 50%;
+  transition: all 0.5s ease;
+}
+
+.corner.top-right {
+  top: 0;
+  right: 0;
+}
+
+.corner.bottom-left {
+  bottom: 0;
+  left: 0;
+  transform: rotate(180deg);
+}
+
+.inner-corner {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: #ffff00;
+  transform: rotate(45deg) translate(50%, -50%);
+  top: 0;
+  right: 0;
+}
+
+.hover-bg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #ffff00;
+  /* indigo-600 */
+  border-radius: 8px;
+  transform: translateX(-100%);
+  transition: all 0.5s ease 0.2s;
+  z-index: 0;
+}
+
+.button-text {
+  position: relative;
+  width: 100%;
+  text-align: left;
+  color: white;
+  transition: color 0.2s ease;
+  z-index: 1;
+}
+
+.fancy-button:hover .corner.top-right {
+  margin-right: -16px;
+  margin-top: -16px;
+}
+
+.fancy-button:hover .corner.bottom-left {
+  margin-left: -16px;
+  margin-bottom: -16px;
+}
+
+.fancy-button:hover .hover-bg {
+  transform: translateX(0);
+}
+
+.fancy-button:hover .button-text {
+  color: #0076a2;
+}
+
+
+* {
+
+  margin: 0px;
+  padding: 0;
+}
+
+#chart,
+#chart1 {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 2 / 1;
+  /* Maintain a 2:1 width-height ratio */
+  background-color: #f9f9f9;
+  /* optional, just to see it clearly */
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  /* optional for better look */
+}
+
+
+.input {
+  border: 2px solid #4a9dec;
+  width: 15em;
+  height: 3em;
+  padding-left: 0.8em;
+  outline: none;
+  overflow: hidden;
+  background-color: #f3f3f3;
+  border-radius: 10px;
+  transition: all 0.5s;
+}
+
+.input:hover,
+.input:focus {
+  border: 2px solid #4a9dec;
+  box-shadow: 0px 0px 0px 7px rgb(74, 157, 236, 20%);
+  background-color: white;
+}
+
+form {
+  display: flex;
+  flex-direction: column; /* On small screens, stack vertically */
+  gap: 15px; /* smaller gap */
+  width: 90%; /* flexible width */
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 10px;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  form {
+    flex-direction: row; /* Row layout on tablet and desktop */
+    padding: 20px;
+  }
+}
+
+.header {
+  text-align: center;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.header h1 {
+  font-size: 2rem;
+  /* default size */
+  margin-bottom: 10px;
+  color: #0076a2;
+}
+
+.header p {
+  font-size: 1rem;
+  color: #555;
+  max-width: 600px;
+  margin: 0 auto;
+  padding-top: 10px;
+}
+
+/* Make it responsive */
+@media (max-width: 768px) {
+  .header h1 {
+    font-size: 1.5rem;
+    /* smaller heading on tablet */
+  }
+
+  .header p {
+    font-size: 1rem;
+    padding: 0 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header h1 {
+    font-size: 1.25rem;
+    /* smaller heading on mobile */
+  }
+
+  .header p {
+    font-size: 0.9rem;
+  }
+}
+
+/* Responsive for smaller screens */
+@media (max-width: 768px) {
+  .input {
+    font-size: 0.95rem;
+    padding: 10px 16px;
+  }
+
+  .fancy-button {
+    font-size: 0.95rem;
+    padding: 10px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .input {
+    font-size: 0.9rem;
+    padding: 8px 14px;
+  }
+
+  .fancy-button {
+    font-size: 0.9rem;
+    padding: 8px 18px;
+  }
+}
+
+/* Optional: Adjust on very small screens */
+@media (max-width: 480px) {
+
+  #waterWallBlock,
+  #waterBlock {
+    padding: 5px;
+  }
+
+  #chart,
+  #chart1 {
+    aspect-ratio: 3 / 2;
+    /* slightly taller ratio for small devices */
+  }
+}
+
+.chartContainer {
+  width: 90%;
+  max-width: 600px;
+  margin: 20px auto;
+  text-align: center;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Initially hide canvas */
+.chartContainer canvas {
+  display: none;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  aspect-ratio: 2 / 1;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive fixes for small screens */
+@media (max-width: 480px) {
+  .chartContainer canvas {
+    aspect-ratio: 1 / 1;
+  }
+}
+
+#waterunit{ 
+ padding-bottom: 15px;}

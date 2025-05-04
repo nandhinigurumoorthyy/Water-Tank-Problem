@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Water Tank</title>
+  <link rel="icon" href="water-tank-svgrepo-com.svg" type="image/svg+xml" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="header">
+    <h1>Water Tank Problem</h1>
+    <p>
+      Given an array `n` (with values always greater than -1) representing the
+      block heights, compute the units of water stored between the blocks.
+    </p>
+  </div>
+  <div class="form">
+    <form onsubmit="fetchNum(event)">
+      <input type="text" name="inputNum" id="inputNum" class="input" placeholder="0,4,0,0,0,6,0,6,4,0" />
+      <button class="fancy-button">
+        <span class="corner top-right">
+          <span class="inner-corner"></span>
+        </span>
+        <span class="corner bottom-left">
+          <span class="inner-corner"></span>
+        </span>
+        <span class="hover-bg"></span>
+        <span class="button-text">Get Started</span>
+      </button>      
+    </form>
+  </div>
+
+  <div id="waterWallBlock" class="chartContainer">
+    <canvas id="chart"></canvas>
+  </div>
+  <div id="waterBlock" class="chartContainer">
+    <p id="waterunit"></p>
+    <canvas id="chart1"></canvas>
+  </div>
+  <script src="index.js"></script>
+</body>
+
+</html>
