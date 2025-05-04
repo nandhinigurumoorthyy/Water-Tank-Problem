@@ -64,7 +64,7 @@ https://water-tank-graph-problem.netlify.app/
 ## Folder Structure
 
 ```
-project-folder/
+Water-Tank-Problem/
   ├── index.html
   ├── styles.css
   ├── index.js
